@@ -1,0 +1,28 @@
+<article>
+  <header class="header">
+    <h1>Recipes</h1>
+  </header>
+
+  <div class="content">
+    <table class="table table-hover table-flush-top">
+      <tr>
+        <th>Recipe</th>
+        <th>Last Modified</th>
+        <th>Action</th>
+      </tr>
+
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><strong><%= link_to recipe.title, recipe_path(recipe) %></strong></td>
+          <td><%= recipe.updated_at.to_date.to_s(:long) %></td>
+          <td>
+            <%= link_to edit_recipe_path(recipe) do %><i class="icon-edit"></i><% end %>
+            <%= link_to recipe_path(recipe), method: 'delete', confirm: "Are you sure?" do %><i class="icon-trash"></i><% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <%= link_to '<i class="icon-plus"></i>'.html_safe + " New Recipe", new_recipe_path, class: 'btn btn-small' %>
+</article>

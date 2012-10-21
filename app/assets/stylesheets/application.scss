@@ -1,0 +1,24 @@
+$iconSpritePath: image-path("glyphicons-halflings.png");
+$iconWhiteSpritePath: image-path("glyphicons-halflings-white.png");
+
+@import "bootstrap/bootstrap";
+
+input.input-title {
+  font-size: 24px;
+  height: 24px;
+}
+
+.table.table-flush-top tr:first-child {
+  th, td { border-top: none; }
+}
+
+.article {
+}
+
+.header {
+  padding-top: 1em;
+}
+
+.content {
+  padding: 1em 0;
+}

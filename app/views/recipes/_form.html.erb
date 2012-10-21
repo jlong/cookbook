@@ -1,0 +1,28 @@
+<%= form_for @recipe, html: { class: 'form-horizontal' } do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, class: 'control-label' %>
+    <div class="controls"><%= f.text_field :title, class: 'input-title span8' %></div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :instructions, class: 'control-label' %>
+    <div class="controls"><%= f.text_area :instructions, class: 'span8' %></div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', url_for(:back), class: 'btn' %>
+  </div>
+<% end %>

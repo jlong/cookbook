@@ -1,0 +1,18 @@
+<% if notice %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <%= notice %>
+  </div>
+<% end %>
+
+<article>
+  <header class="header">
+    <h1><%= @recipe.title %></h1>
+  </header>
+  <div class="content">
+    <%= simple_format @recipe.instructions %>
+  </div>
+</article>
+
+<%= link_to '<i class="icon-edit"></i>'.html_safe + ' Edit', edit_recipe_path(@recipe), class: 'btn btn-small' %>
+<%= link_to '<i class="icon-trash"></i>'.html_safe + ' Delete', recipe_path(@recipe), method: 'delete', confirm: "Are you sure?", class: 'btn btn-small' %>
