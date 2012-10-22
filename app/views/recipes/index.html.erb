@@ -9,18 +9,19 @@
         <th>Recipe</th>
         <th>Created by</th>
         <th>Last modified</th>
-        <th>Action</th>
       </tr>
 
       <% @recipes.each do |recipe| %>
         <tr>
-          <td><strong><%= link_to recipe.title, recipe_path(recipe) %></strong></td>
+          <td>
+            <strong><%= link_to recipe.title, recipe_path(recipe) %></strong>
+            <% if recipe.created_by.try(:id) === current_user.id %>
+              <%= link_to edit_recipe_path(recipe) do %><i class="icon-edit"></i><% end %>
+              <%= link_to recipe_path(recipe), method: 'delete', confirm: "Are you sure?" do %><i class="icon-trash"></i><% end %>
+            <% end %>
+          </td>
           <td><%= recipe.created_by.try(:email) || 'unknown' %></td>
           <td><%= recipe.updated_at.to_date.to_s(:long) %></td>
-          <td>
-            <%= link_to edit_recipe_path(recipe) do %><i class="icon-edit"></i><% end %>
-            <%= link_to recipe_path(recipe), method: 'delete', confirm: "Are you sure?" do %><i class="icon-trash"></i><% end %>
-          </td>
         </tr>
       <% end %>
     </table>

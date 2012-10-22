@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :set_recipe
+  before_filter :only_allow_creator, only: %w(edit update)
 
   # GET /recipes
   def index
@@ -9,7 +11,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   # GET /recipes/new
@@ -19,7 +20,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   # POST /recipes
@@ -36,7 +36,6 @@ class RecipesController < ApplicationController
 
   # PUT /recipes/1
   def update
-    @recipe = Recipe.find(params[:id])
     @recipe.updated_by = current_user
 
     if @recipe.update_attributes(params[:recipe])
@@ -48,9 +47,18 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1
   def destroy
-    @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to recipes_url
   end
+
+  protected
+
+    def set_recipe
+      @recipe = Recipe.find(params[:id]) if params[:id]
+    end
+
+    def only_allow_creator
+      redirect_to recipes_url, notice: 'You must be the creator of a recipe to edit it' unless @recipe.created_by_id === current_user.id
+    end
 
 end
