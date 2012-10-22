@@ -24,7 +24,7 @@ To start the application:
 
     rails server
 
-== License
+## License
 
 Copyright (c) 2012 John W. Long.
 
