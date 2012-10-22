@@ -25,6 +25,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.created_by = @recipe.updated_by = current_user
 
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created.'
@@ -36,6 +37,7 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   def update
     @recipe = Recipe.find(params[:id])
+    @recipe.updated_by = current_user
 
     if @recipe.update_attributes(params[:recipe])
       redirect_to @recipe, notice: 'Recipe was successfully updated.'
@@ -50,4 +52,5 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_url
   end
+
 end

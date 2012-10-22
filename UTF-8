@@ -1,0 +1,100 @@
+LocalUsers.new.prune_roles!
+File.join('test', 'me.yo')
+File.extension('test.png'
+File.extension('test.png')
+File.ext('test.png')
+File.extname('test.png')
+File.extname('test.png.old')
+File.extname('test')
+File.extname('  ')
+"   ".blank?
+nil.blank?
+"test.png"[3..-1]
+"test.png"[-3..-1]
+"test.png"[-4..-1]
+"test.png"[-".png".length..-1]
+"test.png"[0..-".png".length]
+"test.png"[0..-(".png".length)]
+"test.png"[0..-".png".length-1]
+File.basename('test.png.asdf')
+File.('test.png.asdf')
+uservoice = Subdomain.first.account
+uservoice.grant_access_to! :bulk_ticket_actions
+uv.grant_access_to! :business_hours
+FreemiumFeature.find_by_key
+FreemiumFeature.find(1)
+FreemiumFeature.find(2
+)
+FreemiumFeature.find(2)
+FreemiumFeature.all.map(&:name)
+uv.grant_access_to! :beta_remote_import
+uv = Subdomain.first
+uv.users.find_by_email('john@uservoice.com')
+john.methods.grep /owner/
+john.methods.grep /priv/
+john.instance_methods
+john.methods
+john.methods.grep /type/
+john.methods.grep /kind/
+john = uv.admins.find_by_email('john@uservoice.com')
+uv.admins
+uv.administrators
+john = uv.administrators
+john = uv.administrators.find_by_email('john@uservoice.com')
+john = uv.administrators.select { |u| u.email == 'john@uservoice.com' }
+rich = uv.administrators.select { |u| u.email == 'rich@uservoice.com' }
+rich = rich.first
+rich.password = 'fleetfoot'
+rich.password_confirmation = 'fleetfoot'
+rich.save
+s = DateTimeSelector.new(Time.now)
+s = ActionView::Helpers::DateTimeHelper::DateTimeSelector.new(Time.now)
+s = ActionView::Helpersr::DateTimeSelector.new(Time.now)
+s = ActionView::Helpers::DateTimeSelector.new(Time.now)
+s.month
+s.html_options = {:class => "select"}
+s.instance_variable_set "@html_options", {:class => "select"}
+s.instance_variable_set "@html_options", {:class => "selectbox"}
+s.instance_variable_set "@html_options", {}
+s.instance_variable_set "@html_options", {'class' => "selectbox"}
+s.select_month
+uv.grant_access_to! :categories
+uv = Subdomain.first.account
+FreemiumFeature.all
+FreemiumFeature.all.map(&:name).grep /css/
+uv.has_access_to? :customize_css
+uv = Subdomain.find(1)
+john = uv.users.find('john@uservoice.com')
+john = uv.users.find_by_email('john@uservoice.com')
+john.authorize_role! 'superuser'
+"asdadsf".html_safe
+"asdadsf".html_unsafe
+"asdadsf".html_safe?
+"".html_safe?
+"asdfasdf".instance_variable_set "@_rails_html", nil
+"asdfasdf".instance_variable_set("@_rails_html", nil).html_safe?
+string = "asdf"
+string.instance_variable_set("@_rails_html", nil)
+string.instance_variable_set("@_rails_html", true)
+string.instance_variable_set("@_rails_html_safe", true)
+string
+string.html_safe!
+string.instance_variable_set("@_rails_html_safe", false)
+string.html_safe?
+lines = "\n\n\n"
+lines = lines.split("\n")
+lines.pop
+lines = "\n     asdfasdf".split("\n")
+lines.shift
+r = Recipe.new(title: 'food')
+r
+r.created_by_id = User.first.id
+r.created_by = User.first.id
+r.save!
+User.first
+r.attributes
+r.created_by = User.first
+r.save
+r = Recipe.last
+r.created_by
+exit
