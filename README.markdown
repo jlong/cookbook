@@ -1,8 +1,8 @@
-= Cookbook
+# Cookbook
 
 A Rails 3 demo application inspired by Curt Hibb's original [Rolling with Ruby on Rails](http://oreilly.com/ruby/archive/rails.html) tutorial. Cookbook uses [Devise](https://github.com/plataformatec/devise) for authentication and [Twitter Bootstrap](http://twitter.github.com/bootstrap/) for its styles.
 
-== Getting Started
+## Getting Started
 
 Clone the project:
 
