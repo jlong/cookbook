@@ -14,5 +14,5 @@
   </div>
 </article>
 
-<%= link_to '<i class="icon-edit"></i>'.html_safe + ' Edit', edit_recipe_path(@recipe), class: 'btn btn-small' %>
+<%= link_to '<i class="icon-edit"></i>'.html_safe + ' Edit recipe', edit_recipe_path(@recipe), class: 'btn btn-small' %>
 <%= link_to '<i class="icon-trash"></i>'.html_safe + ' Delete', recipe_path(@recipe), method: 'delete', confirm: "Are you sure?", class: 'btn btn-small' %>

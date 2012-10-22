@@ -36,3 +36,6 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+
+# Use devise for authentication
+gem 'devise'

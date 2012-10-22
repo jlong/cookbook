@@ -1,0 +1,31 @@
+<article>
+  <header class="header">
+    <h1>Sign up</h1>
+  </header>
+  <div class="content">
+    <div class="row">
+      <div class="span5">
+
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "span5" %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "span5" %>
+
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "span5" %>
+
+          <div class="form-actions">
+            <%= f.submit "Sign up", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+  <footer class="footer"><%= render "devise/shared/links" %></footer>
+</article>
+

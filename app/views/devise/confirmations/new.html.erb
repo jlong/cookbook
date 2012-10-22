@@ -1,0 +1,24 @@
+<article>
+  <header class="header">
+    <h1>Resend confirmation instructions</h1>
+  </header>
+  <div class="content">
+    <div class="row">
+      <div class="span5">
+        <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'span5' %>
+
+          <div class="form-actions"><%= f.submit "Resend confirmation instructions" %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <%= render "devise/shared/links" %>
+  </footer>
+</article>
+
+
